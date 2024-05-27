@@ -47,10 +47,10 @@
         
     </div>
 </div>
-
+<p>hi</p>
 <?php 
     }
-    require_once './views/template/layout.php';sscanf
+    require_once './views/template/layout.php';
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
