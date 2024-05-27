@@ -50,7 +50,7 @@
 
 <?php 
     }
-    require_once './views/template/layout.php';
+    require_once './views/template/layout.php';sscanf
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
