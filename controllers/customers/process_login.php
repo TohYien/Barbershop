@@ -16,5 +16,5 @@ if($customers && password_verify($password, $customers['password'])) {
     header('Location: /');
 } else {
     echo "<h4>Wrong Credentials</h4>";
-    echo "<a href='/views/login.php'>Go back to login</a>";
+    echo "<a href='/views/pages/login.php'>Go back to login</a>";
 }

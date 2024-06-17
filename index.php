@@ -1,5 +1,5 @@
 <?php 
-    $title = "Catalogue";
+    $title = "My Barber";
     function get_content() {
         require_once './controllers/connection.php';
 
@@ -17,7 +17,7 @@
         </div>
     <?php endif; ?>
 
-    <h2 class="py-5">Catalogue</h2>
+    <h2 class="py-5">My Barber Shop</h2>
 
     <div class="row">
         <?php foreach($barbers as $barber): ?>
@@ -26,13 +26,14 @@
                     <img src="<?php echo $barber['image'] ?>" alt="" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $barber['name']?></h5>
-                        <p class="card-text"><?php echo $barber['description']?></p>
-                        <small>RM <?php echo $barber['price'] ?></small>
+                        <p class="card-text">Phone: <?php echo $barber['phone'] ?></p>
+                        <p class="card-text">Email: <?php echo $barber['email'] ?></p>
+                        <p class="card-text">Experience: <?php echo $barber['experience'] ?></p>
                     </div>
                     <?php if(isset($_SESSION['user_info']) && !$_SESSION['user_info']['isAdmin']): ?>
                     <div class="card-footer">
                         <form action="/controllers/cart/add.php" method="POST">
-                            <input type="hidden" name="id" value="<?php echo $barber['id']?>"/>
+                            <input type="hidden" name="id" value="<?php echo $barber['barber_id']?>"/>
                             <div class="input-group">
                                 <input type="number" name="quantity" class="form-control"/>
                                 <button class="btn btn-success">ATC+</button>
@@ -47,7 +48,6 @@
         
     </div>
 </div>
-<p>hi</p>
 <?php 
     }
     require_once './views/template/layout.php';
